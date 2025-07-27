@@ -24,7 +24,7 @@ import java from "@/assets/icons/java.png";
 import cpp from "@/assets/icons/c++.png";
 import python from "@/assets/icons/python.png";
 import appwrite from "@/assets/icons/appwrite.png";
-import firebase from "@/assets/icons/firebase.png";
+//import firebase from "@/assets/icons/firebase.png";
 import postman from "@/assets/icons/postman.png";
 import vscode from "@/assets/icons/vscode (2).png";
 import vercel from "@/assets/icons/vercel.png";
@@ -44,7 +44,7 @@ const techStack = [
   { name: "Node.js", icon: nodejs },
   { name: "Express.js", icon: express },
   { name: "Appwrite", icon: appwrite },
-  { name: "Firebase", icon: firebase },
+  //{ name: "Firebase", icon: firebase },
   { name: "OpenAI", icon: openai },
 
   // 🗄️ Databases

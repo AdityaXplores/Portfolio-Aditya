@@ -59,6 +59,7 @@ export const HeroSection = () => {
             <SparkleIcon className="size-14 text-emerald-300/20" />
           </HeroOrbit>
         </div>
+
         <div className="container">
           <div className="flex flex-col items-center">
             <div className="font-host-grotesk text-8xl font-bold mb-5 md:text-7xl sm:text-4xl">
@@ -71,13 +72,16 @@ export const HeroSection = () => {
                 Hey, I&apos;m Aditya
               </TextAnimate>
             </div>
+
+            {/* 👇 Improved Memoji Image Styling */}
             <Image
-              className="size-[100px]"
+              className="size-[100px] sm:size-[120px] md:size-[140px] lg:size-[160px] rounded-full shadow-xl border-4 border-white/10 object-contain mt-4"
               src={memojiImgae}
-              alt="Person Peeking from behind laptop"
+              alt="Aditya's Memoji"
               priority
             />
-            <div className="bg-gray-950 border border-gray-800 px-4 py-2 inline-flex items-center gap-4 rounded-lg">
+
+            <div className="bg-gray-950 border border-gray-800 px-4 py-2 inline-flex items-center gap-4 rounded-lg mt-4">
               <div className="bg-green-500 size-2.5 rounded-full relative">
                 <div className="bg-green-500 absolute inset-0 rounded-full animate-ping"></div>
               </div>
@@ -86,8 +90,9 @@ export const HeroSection = () => {
               </div>
             </div>
           </div>
+
           <div className="max-w-lg mx-auto">
-            <h1 className="font-serif text-3xl md:text5xl text-center mt-8 tracking-wide">
+            <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 tracking-wide">
               <TextAnimate animate="blueInUp" once>
                 Crafting digital experiences through code and creative design.
               </TextAnimate>
@@ -106,7 +111,8 @@ export const HeroSection = () => {
               </TextAnimate>
             </div>
           </div>
-          <div className="flex flex-col items-center md:flex-row justify-center mt-8 gap-4 ">
+
+          <div className="flex flex-col items-center md:flex-row justify-center mt-8 gap-4">
             <button
               onClick={scrollToContact}
               className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-full"
@@ -118,7 +124,7 @@ export const HeroSection = () => {
               href="https://docs.google.com/document/d/1mYLgpinYeZ28lYOrhi6eqox_eyNhBA92/edit?usp=sharing&ouid=105664126392160138027&rtpof=true&sd=true"
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor:pointer inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-full"
+              className="cursor-pointer inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-full"
             >
               <span className="font-semibold">My Resume</span>
             </a>

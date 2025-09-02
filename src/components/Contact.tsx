@@ -1,7 +1,7 @@
 "use client";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
 import { TextAnimate } from "@/components/magicui/text-animate";
-import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
+import { InteractiveHoverButton } from '@/components/magicui/interactive-hover-button';
 import { toast } from "react-hot-toast";
 import { useState } from "react";
 

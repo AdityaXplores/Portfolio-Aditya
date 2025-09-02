@@ -27,24 +27,24 @@ const config: Config = {
         serif: "var(--font-serif)",
         "host-grotesk": "var(--font-host-grotesk)",
       },
-
       animation: {
         "move-left": "move-left 20s linear infinite",
-		    "gradient": 'gradient 8s linear infinite',
+        gradient: "gradient 8s linear infinite",
+        blink: "blink 1s steps(2, start) infinite",
+        "spin-slow": "spin 30s linear infinite",
+        "spin-medium": "spin 15s linear infinite",
+        "spin-fast": "spin 5s linear infinite",
       },
-
       keyframes: {
         gradient: {
           "0%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
           "100%": { backgroundPosition: "0% 50%" },
         },
-
         "move-left": {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
-
         "shiny-text": {
           "0%, 90%, 100%": {
             "background-position": "calc(-100% - var(--shiny-width)) 0",
@@ -53,8 +53,11 @@ const config: Config = {
             "background-position": "calc(100% + var(--shiny-width)) 0",
           },
         },
+        blink: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0" },
+        },
       },
-
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

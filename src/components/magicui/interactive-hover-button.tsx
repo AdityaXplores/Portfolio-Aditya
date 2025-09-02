@@ -13,7 +13,7 @@ export const InteractiveHoverButton = React.forwardRef<
     <button
       ref={ref}
       className={cn(
-        "group relative w-auto cursor-pointer overflow-hidden rounded-full border bg-transparent p-3 px-6 text-center font-semibold",
+        "group relative w-auto cursor-pointer overflow-hidden rounded-full border-2 border-emerald-300 bg-transparent px-6 py-3 text-center font-semibold transition-all duration-300 hover:bg-emerald-100",
         className,
       )}
       {...props}
@@ -24,12 +24,14 @@ export const InteractiveHoverButton = React.forwardRef<
           {children}
         </span>
       </div>
-      <div className="absolute top-0 z-10 flex h-full w-full translate-x-12 items-center justify-center gap-2 text-gray-800 opacity-0 transition-all duration-1000 group-hover:-translate-x-5 group-hover:opacity-100">
+      <div className="absolute top-0 z-10 flex h-full w-full translate-x-12 items-center justify-center gap-2 text-emerald-500 opacity-0 transition-all duration-1000 group-hover:-translate-x-5 group-hover:opacity-100">
         <span>{children}</span>
-        <ArrowRight />
+        <ArrowRight className="animate-blink" />
       </div>
     </button>
   );
 });
 
 InteractiveHoverButton.displayName = "InteractiveHoverButton";
+
+export default InteractiveHoverButton;

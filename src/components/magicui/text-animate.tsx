@@ -1,3 +1,4 @@
+// full updated code with all animation variants including bounceIn, flipUp, rotateIn, zoomInFade, popUp
 "use client";
 
 import { cn } from "@/lib/utils";
@@ -15,52 +16,24 @@ type AnimationVariant =
   | "slideLeft"
   | "slideRight"
   | "scaleUp"
-  | "scaleDown";
+  | "scaleDown"
+  | "bounceIn"
+  | "flipUp"
+  | "rotateIn"
+  | "zoomInFade"
+  | "popUp";
 
 interface TextAnimateProps extends MotionProps {
-  /**
-   * The text content to animate
-   */
   children: string;
-  /**
-   * The class name to be applied to the component
-   */
   className?: string;
-  /**
-   * The class name to be applied to each segment
-   */
   segmentClassName?: string;
-  /**
-   * The delay before the animation starts
-   */
   delay?: number;
-  /**
-   * The duration of the animation
-   */
   duration?: number;
-  /**
-   * Custom motion variants for the animation
-   */
   variants?: Variants;
-  /**
-   * The element type to render
-   */
   as?: ElementType;
-  /**
-   * How to split the text ("text", "word", "character")
-   */
   by?: AnimationType;
-  /**
-   * Whether to start animation when component enters viewport
-   */
   startOnView?: boolean;
-  /**
-   * Whether to animate only once
-   */
   once?: boolean;
-  /**
-   * The animation preset to use
-   */
   animation?: AnimationVariant;
 }
 
@@ -91,52 +64,25 @@ const defaultContainerVariants = {
 
 const defaultItemVariants: Variants = {
   hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-  },
-  exit: {
-    opacity: 0,
-  },
+  show: { opacity: 1 },
+  exit: { opacity: 0 },
 };
 
-const defaultItemAnimationVariants: Record<
-  AnimationVariant,
-  { container: Variants; item: Variants }
-> = {
+const defaultItemAnimationVariants: Record<AnimationVariant, { container: Variants; item: Variants }> = {
   fadeIn: {
     container: defaultContainerVariants,
     item: {
       hidden: { opacity: 0, y: 20 },
-      show: {
-        opacity: 1,
-        y: 0,
-        transition: {
-          duration: 0.3,
-        },
-      },
-      exit: {
-        opacity: 0,
-        y: 20,
-        transition: { duration: 0.3 },
-      },
+      show: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+      exit: { opacity: 0, y: 20, transition: { duration: 0.3 } },
     },
   },
   blurIn: {
     container: defaultContainerVariants,
     item: {
       hidden: { opacity: 0, filter: "blur(10px)" },
-      show: {
-        opacity: 1,
-        filter: "blur(0px)",
-        transition: {
-          duration: 0.3,
-        },
-      },
-      exit: {
-        opacity: 0,
-        filter: "blur(10px)",
-        transition: { duration: 0.3 },
-      },
+      show: { opacity: 1, filter: "blur(0px)", transition: { duration: 0.3 } },
+      exit: { opacity: 0, filter: "blur(10px)", transition: { duration: 0.3 } },
     },
   },
   blurInUp: {
@@ -185,68 +131,32 @@ const defaultItemAnimationVariants: Record<
     container: defaultContainerVariants,
     item: {
       hidden: { y: 20, opacity: 0 },
-      show: {
-        y: 0,
-        opacity: 1,
-        transition: {
-          duration: 0.3,
-        },
-      },
-      exit: {
-        y: -20,
-        opacity: 0,
-        transition: {
-          duration: 0.3,
-        },
-      },
+      show: { y: 0, opacity: 1, transition: { duration: 0.3 } },
+      exit: { y: -20, opacity: 0, transition: { duration: 0.3 } },
     },
   },
   slideDown: {
     container: defaultContainerVariants,
     item: {
       hidden: { y: -20, opacity: 0 },
-      show: {
-        y: 0,
-        opacity: 1,
-        transition: { duration: 0.3 },
-      },
-      exit: {
-        y: 20,
-        opacity: 0,
-        transition: { duration: 0.3 },
-      },
+      show: { y: 0, opacity: 1, transition: { duration: 0.3 } },
+      exit: { y: 20, opacity: 0, transition: { duration: 0.3 } },
     },
   },
   slideLeft: {
     container: defaultContainerVariants,
     item: {
       hidden: { x: 20, opacity: 0 },
-      show: {
-        x: 0,
-        opacity: 1,
-        transition: { duration: 0.3 },
-      },
-      exit: {
-        x: -20,
-        opacity: 0,
-        transition: { duration: 0.3 },
-      },
+      show: { x: 0, opacity: 1, transition: { duration: 0.3 } },
+      exit: { x: -20, opacity: 0, transition: { duration: 0.3 } },
     },
   },
   slideRight: {
     container: defaultContainerVariants,
     item: {
       hidden: { x: -20, opacity: 0 },
-      show: {
-        x: 0,
-        opacity: 1,
-        transition: { duration: 0.3 },
-      },
-      exit: {
-        x: 20,
-        opacity: 0,
-        transition: { duration: 0.3 },
-      },
+      show: { x: 0, opacity: 1, transition: { duration: 0.3 } },
+      exit: { x: 20, opacity: 0, transition: { duration: 0.3 } },
     },
   },
   scaleUp: {
@@ -258,18 +168,10 @@ const defaultItemAnimationVariants: Record<
         opacity: 1,
         transition: {
           duration: 0.3,
-          scale: {
-            type: "spring",
-            damping: 15,
-            stiffness: 300,
-          },
+          scale: { type: "spring", damping: 15, stiffness: 300 },
         },
       },
-      exit: {
-        scale: 0.5,
-        opacity: 0,
-        transition: { duration: 0.3 },
-      },
+      exit: { scale: 0.5, opacity: 0, transition: { duration: 0.3 } },
     },
   },
   scaleDown: {
@@ -281,18 +183,50 @@ const defaultItemAnimationVariants: Record<
         opacity: 1,
         transition: {
           duration: 0.3,
-          scale: {
-            type: "spring",
-            damping: 15,
-            stiffness: 300,
-          },
+          scale: { type: "spring", damping: 15, stiffness: 300 },
         },
       },
-      exit: {
-        scale: 1.5,
-        opacity: 0,
-        transition: { duration: 0.3 },
-      },
+      exit: { scale: 1.5, opacity: 0, transition: { duration: 0.3 } },
+    },
+  },
+  bounceIn: {
+    container: defaultContainerVariants,
+    item: {
+      hidden: { scale: 0.3, opacity: 0 },
+      show: { scale: 1, opacity: 1, transition: { type: "spring", stiffness: 500, damping: 20 } },
+      exit: { scale: 0.3, opacity: 0, transition: { duration: 0.2 } },
+    },
+  },
+  flipUp: {
+    container: defaultContainerVariants,
+    item: {
+      hidden: { rotateX: 90, opacity: 0 },
+      show: { rotateX: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
+      exit: { rotateX: 90, opacity: 0, transition: { duration: 0.4 } },
+    },
+  },
+  rotateIn: {
+    container: defaultContainerVariants,
+    item: {
+      hidden: { rotate: -90, opacity: 0 },
+      show: { rotate: 0, opacity: 1, transition: { duration: 0.4 } },
+      exit: { rotate: 90, opacity: 0, transition: { duration: 0.3 } },
+    },
+  },
+  zoomInFade: {
+    container: defaultContainerVariants,
+    item: {
+      hidden: { scale: 0.8, opacity: 0 },
+      show: { scale: 1, opacity: 1, transition: { duration: 0.35, ease: "easeOut" } },
+      exit: { scale: 0.8, opacity: 0, transition: { duration: 0.3 } },
+    },
+  },
+  popUp: {
+    container: defaultContainerVariants,
+    item: {
+      hidden: { y: 30, scale: 0.95, opacity: 0 },
+      show: { y: 0, scale: 1, opacity: 1, transition: { type: "spring", stiffness: 300, damping: 20 } },
+      exit: { y: 30, scale: 0.95, opacity: 0, transition: { duration: 0.25 } },
     },
   },
 };
@@ -312,24 +246,14 @@ const TextAnimateBase = ({
   ...props
 }: TextAnimateProps) => {
   const MotionComponent = motion.create(Component);
-
   let segments: string[] = [];
   switch (by) {
-    case "word":
-      segments = children.split(/(\s+)/);
-      break;
-    case "character":
-      segments = children.split("");
-      break;
-    case "line":
-      segments = children.split("\n");
-      break;
+    case "word": segments = children.split(/(\s+)/); break;
+    case "character": segments = children.split(""); break;
+    case "line": segments = children.split("\n"); break;
     case "text":
-    default:
-      segments = [children];
-      break;
+    default: segments = [children]; break;
   }
-
   const finalVariants = variants
     ? {
         container: {
@@ -353,27 +277,27 @@ const TextAnimateBase = ({
         item: variants,
       }
     : animation
-      ? {
-          container: {
-            ...defaultItemAnimationVariants[animation].container,
-            show: {
-              ...defaultItemAnimationVariants[animation].container.show,
-              transition: {
-                delayChildren: delay,
-                staggerChildren: duration / segments.length,
-              },
-            },
-            exit: {
-              ...defaultItemAnimationVariants[animation].container.exit,
-              transition: {
-                staggerChildren: duration / segments.length,
-                staggerDirection: -1,
-              },
+    ? {
+        container: {
+          ...defaultItemAnimationVariants[animation].container,
+          show: {
+            ...defaultItemAnimationVariants[animation].container.show,
+            transition: {
+              delayChildren: delay,
+              staggerChildren: duration / segments.length,
             },
           },
-          item: defaultItemAnimationVariants[animation].item,
-        }
-      : { container: defaultContainerVariants, item: defaultItemVariants };
+          exit: {
+            ...defaultItemAnimationVariants[animation].container.exit,
+            transition: {
+              staggerChildren: duration / segments.length,
+              staggerDirection: -1,
+            },
+          },
+        },
+        item: defaultItemAnimationVariants[animation].item,
+      }
+    : { container: defaultContainerVariants, item: defaultItemVariants };
 
   return (
     <AnimatePresence mode="popLayout">
@@ -395,7 +319,7 @@ const TextAnimateBase = ({
             className={cn(
               by === "line" ? "block" : "inline-block whitespace-pre",
               by === "character" && "",
-              segmentClassName,
+              segmentClassName
             )}
           >
             {segment}
@@ -406,5 +330,4 @@ const TextAnimateBase = ({
   );
 };
 
-// Export the memoized version
 export const TextAnimate = memo(TextAnimateBase);

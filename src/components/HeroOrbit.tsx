@@ -1,13 +1,24 @@
 import { PropsWithChildren } from "react";
 
+type HeroOrbitProps = {
+  size?: number; // optional size
+  rotation?: number; // optional angle
+  speed?: number; // optional speed in seconds
+};
+
 export const HeroOrbit = ({
   children,
-  size,
-  rotation,
-}: PropsWithChildren<{ size: number; rotation: number }>) => {
+  size = 300,
+  rotation = 45,
+  speed = 30,
+}: PropsWithChildren<HeroOrbitProps>) => {
   return (
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-      <div className="animate-spin [animation-duration:30s]">
+    <div
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+      role="presentation"
+    >
+      {/* Outer orbit spin */}
+      <div style={{ animation: `spin ${speed}s linear infinite` }}>
         <div
           className="flex items-start justify-start"
           style={{
@@ -16,10 +27,11 @@ export const HeroOrbit = ({
             transform: `rotate(${rotation}deg)`,
           }}
         >
-          <div className="animate-spin [animation-duration:15s]">
+          {/* Inner counter-spin to keep child upright */}
+          <div style={{ animation: `spin ${speed / 2}s linear infinite` }}>
             <div
               className="inline-flex"
-              style={{ transform: `rotate(${rotation * -1}deg)` }}
+              style={{ transform: `rotate(-${rotation}deg)` }}
             >
               {children}
             </div>
@@ -29,3 +41,4 @@ export const HeroOrbit = ({
     </div>
   );
 };
+

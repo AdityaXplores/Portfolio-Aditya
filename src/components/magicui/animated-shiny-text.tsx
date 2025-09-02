@@ -1,39 +1,30 @@
-import { ComponentPropsWithoutRef, CSSProperties, FC } from "react";
-
+import React from "react";
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export interface AnimatedShinyTextProps
-  extends ComponentPropsWithoutRef<"span"> {
-  shimmerWidth?: number;
-}
+interface MagneticButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
-export const AnimatedShinyText: FC<AnimatedShinyTextProps> = ({
-  children,
-  className,
-  shimmerWidth = 100,
-  ...props
-}) => {
+export const MagneticButton = React.forwardRef<
+  HTMLButtonElement,
+  MagneticButtonProps
+>(({ children, className, ...props }, ref) => {
   return (
-    <span
-      style={
-        {
-          "--shiny-width": `${shimmerWidth}px`,
-        } as CSSProperties
-      }
+    <button
+      ref={ref}
       className={cn(
-        "mx-auto max-w-md text-neutral-600/70 dark:text-neutral-400/70",
-
-        // Shine effect
-        "animate-shiny-text bg-clip-text bg-no-repeat [background-position:0_0] [background-size:var(--shiny-width)_100%] [transition:background-position_1s_cubic-bezier(.6,.6,0,1)_infinite]",
-
-        // Shine gradient
-        "bg-gradient-to-r from-transparent via-black/80 via-50% to-transparent  dark:via-white/80",
-
+        "group relative overflow-hidden rounded-full border-2 border-purple-400 bg-transparent px-8 py-3 font-semibold text-purple-400 transition-all duration-300 hover:scale-110 hover:border-purple-300 hover:text-white hover:shadow-[0_0_30px_rgba(147,51,234,0.6)]",
+        "before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r before:from-purple-600 before:to-pink-600 before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100",
         className,
       )}
       {...props}
     >
-      {children}
-    </span>
+      <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover:scale-105">
+        {children}
+        <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+      </span>
+    </button>
   );
-};
+});
+
+MagneticButton.displayName = "MagneticButton";

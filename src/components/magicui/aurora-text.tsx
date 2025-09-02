@@ -2,42 +2,67 @@
 
 import React, { memo } from "react";
 
-interface AuroraTextProps {
+interface WaveTextProps {
   children: React.ReactNode;
   className?: string;
-  colors?: string[];
+  amplitude?: number;
+  frequency?: number;
   speed?: number;
+  color?: string;
 }
 
-export const AuroraText = memo(
+export const WaveText = memo(
   ({
     children,
     className = "",
-    colors = ["#FF0080", "#7928CA", "#0070F3", "#38bdf8"],
+    amplitude = 10,
+    frequency = 0.5,
     speed = 1,
-  }: AuroraTextProps) => {
-    const gradientStyle = {
-      backgroundImage: `linear-gradient(135deg, ${colors.join(", ")}, ${
-        colors[0]
-      })`,
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      animationDuration: `${10 / speed}s`,
-    };
-
+    color = "#3b82f6",
+  }: WaveTextProps) => {
+    const text = typeof children === "string" ? children : "";
+    
     return (
       <span className={`relative inline-block ${className}`}>
         <span className="sr-only">{children}</span>
         <span
-          className="relative animate-aurora bg-[length:200%_auto] bg-clip-text text-transparent"
-          style={gradientStyle}
+          className="relative inline-block"
+          style={{ color }}
           aria-hidden="true"
         >
-          {children}
+          {text.split("").map((char, index) => (
+            <span
+              key={index}
+              className="inline-block animate-wave"
+              style={{
+                animationDelay: `${index * 0.1}s`,
+                animationDuration: `${2 / speed}s`,
+                transform: `translateY(${Math.sin(index * frequency) * amplitude}px)`,
+              }}
+            >
+              {char === " " ? "\u00A0" : char}
+            </span>
+          ))}
         </span>
       </span>
     );
-  },
+  }
 );
 
-AuroraText.displayName = "AuroraText";
+WaveText.displayName = "WaveText";
+
+// Add this CSS to your globals.css:
+/*
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
+}
+*/

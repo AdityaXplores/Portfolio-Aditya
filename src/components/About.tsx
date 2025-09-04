@@ -20,7 +20,7 @@ export const AboutSection = () => {
           <div className="max-w-6xl mt-16 sm:mt-10 text-center">
             <div className="leading-10 font-light font-host-grotesk lg:text-2xl sm:text-lg md:text-xl tracking-wide">
               <TextAnimate animation="blurInUp" by="word" duration={3}>
-                I&apos;m Aditya Lahane, a Full Stack Developer who loves
+                I&apos;m Aditya Lahane, a Software Developer who loves
                 crafting seamless and responsive user experiences. I turn ideas
                 into interactive and accessible interfaces. I enjoy building
                 clean, maintainable code and constantly exploring the latest in

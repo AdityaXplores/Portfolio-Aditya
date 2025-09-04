@@ -4,8 +4,9 @@ import React from "react";
 const footerLinks = [
   { name: "Github", url: "https://github.com/AdityaXplores" },
   { name: "LinkedIn", url: "https://www.linkedin.com/in/aditya-lahane-420685289/" },
-  { name: "Instagram", url: "https://instagram.com/" },
-  { name: "Twitter", url: "https://x.com/" },
+  { name: "LeetCode", url: "https://leetcode.com/u/_Ashish_Lahane_/" },
+  { name: "CodeChef", url: "https://www.codechef.com/users/adityalahane65" },
+  { name: "Codeforces", url: "https://codeforces.com/profile/_Lahane_Aditya_" },
 ];
 
 export const Footer = () => {

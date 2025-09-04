@@ -25,8 +25,8 @@ const hostGrotesk = Host_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Aditya Lahane — Full Stack Web Developer",
-  description: "Creative Full Stack Web Developer",
+  title: "Aditya Lahane — Software Developer",
+  description: "Creative Software Developer | Problem Solver | Tech Enthusiast",
   icons: {
     icon: "/my-logo.png",
   },

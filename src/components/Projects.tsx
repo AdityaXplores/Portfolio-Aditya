@@ -29,7 +29,7 @@ const portfolioProjects = [
       { title: "Optimized state management" },
       { title: "Agile collaboration for UI delivery" },
     ],
-    link: "",
+    link: "https://farm-manager-lake.vercel.app/",
     image: FarmManager,
   },
   {

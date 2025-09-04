@@ -4,7 +4,7 @@ import { TapeSection } from "@/components/Tape";
 import { AboutSection } from "@/components/About";
 import Approach from "@/components/Approach";
 import { Projects } from "@/components/Projects";
-import { CompetitiveProgramming } from "@/components/CompetitiveProgramming";
+import { Profiles } from "@/components/CompetitiveProgramming";
 import { ContactSection } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
@@ -32,7 +32,7 @@ export default function Home() {
 
       {/* Competitive Programming Section */}
       <div id="cp">
-        <CompetitiveProgramming />
+        <Profiles />
       </div>
 
       <div id="contact">

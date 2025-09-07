@@ -39,22 +39,26 @@ The app will be available at [http://localhost:3000](http://localhost:3000) by d
 
 ## 🛠️ Tech Stack
 
-### Frameworks & Libraries
+### ⚛️ Frameworks & Libraries
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-### UI & Animation
+### 🎨 UI & Animation
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 ![Magic UI](https://img.shields.io/badge/Magic_UI-6C63FF?style=for-the-badge&logo=sparkfun&logoColor=white)
 ![ReactBits](https://img.shields.io/badge/ReactBits-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Lenis](https://img.shields.io/badge/Lenis-1E293B?style=for-the-badge&logo=airplayaudio&logoColor=white)
 
-### Tools & Features
+### 🛠️ Tools & Features
 ![next/image](https://img.shields.io/badge/Next_Image-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![Accessibility](https://img.shields.io/badge/Accessibility-FFD700?style=for-the-badge&logo=accessible-icon&logoColor=black)
 ![Responsive Design](https://img.shields.io/badge/Responsive_Design-34D399?style=for-the-badge&logo=googlechrome&logoColor=white)
+
+### 🚀 Deployment & Hosting
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-181717?style=for-the-badge&logo=github&logoColor=white)
 
 ---
 

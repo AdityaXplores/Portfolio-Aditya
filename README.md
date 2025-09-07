@@ -6,7 +6,7 @@ A modern, interactive, and minimal portfolio built with **Next.js**, **React**, 
 
 ## 📝 Description
 
-This portfolio is a web-based showcase of my work as a Full Stack Developer. It features animated sections, interactive UI elements, and a responsive design. Explore my skills, featured projects, and learn about my approach to building digital experiences.
+This portfolio is a web-based showcase of my work as a Software Developer. It features animated sections, interactive UI elements, and a responsive design. Explore my skills, featured projects, and learn about my approach to building digital experiences.
 
 ---
 

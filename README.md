@@ -57,8 +57,8 @@ The app will be available at [http://localhost:3000](http://localhost:3000) by d
 ![Responsive Design](https://img.shields.io/badge/Responsive_Design-34D399?style=for-the-badge&logo=googlechrome&logoColor=white)
 
 ### 🚀 Deployment & Hosting
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
-![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-181717?style=for-the-badge&logo=github&logoColor=white)
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://aditya6215.vercel.app)
+[![Live Project](https://img.shields.io/badge/Live%20Portfolio-aditya6215.vercel.app-green?style=for-the-badge&logo=vercel)](https://aditya6215.vercel.app)
 
 ---
 

@@ -116,6 +116,7 @@ Portfolio/
 - **Interactive Buttons**: Hover and click effects throughout the UI.
 
 ---
+Feel free to suggest improvements or report issues via GitHub Issues.
 
 ## 📬 Contact
 

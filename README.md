@@ -39,17 +39,22 @@ The app will be available at [http://localhost:3000](http://localhost:3000) by d
 
 ## 🛠️ Tech Stack
 
-| Tech                | Description                                                                 |
-|---------------------|-----------------------------------------------------------------------------|
-| ⚛️ **Next.js**      | React framework for server-side rendering and static site generation.        |
-| ⚡ **React**         | Component-based UI library for building dynamic, responsive interfaces.      |
-| 🎨 **Tailwind CSS** | Utility-first CSS framework for rapid styling and a clean look.              |
-| 🧬 **ReactBits**      | Custom React utilities and components for enhanced interactivity.            |
-| ✨ **MagicUi**         | UI library for magical, animated, and interactive UI elements.               |
-| 🌀 **Framer Motion** | Animation library for smooth transition and interactive UI.                 |
-| 🖼️ **next/image**   | Optimized image component for faster load times.                             |
-| 🧩 **Lenis**        | Smooth scroll library for buttery navigation.                                |
-| 🛠️ **TypeScript**   | Type-safe JavaScript for scalable and maintainable code.                     |
+### Frameworks & Libraries
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+
+### UI & Animation
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
+![Magic UI](https://img.shields.io/badge/Magic_UI-6C63FF?style=for-the-badge&logo=sparkfun&logoColor=white)
+![ReactBits](https://img.shields.io/badge/ReactBits-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Lenis](https://img.shields.io/badge/Lenis-1E293B?style=for-the-badge&logo=airplayaudio&logoColor=white)
+
+### Tools & Features
+![next/image](https://img.shields.io/badge/Next_Image-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Accessibility](https://img.shields.io/badge/Accessibility-FFD700?style=for-the-badge&logo=accessible-icon&logoColor=black)
+![Responsive Design](https://img.shields.io/badge/Responsive_Design-34D399?style=for-the-badge&logo=googlechrome&logoColor=white)
 
 ---
 

@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import Image from "next/image";
 
 // Icons
-import openai from "@/assets/icons/openai.png";
+//import openai from "@/assets/icons/openai.png";
 import html from "@/assets/icons/html.png";
 import css from "@/assets/icons/css.png";
 import javascript from "@/assets/icons/javascript.png";

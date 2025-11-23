@@ -45,7 +45,6 @@ const techStack = [
   { name: "Express.js", icon: express },
   { name: "Appwrite", icon: appwrite },
   //{ name: "Firebase", icon: firebase },
-  { name: "OpenAI", icon: openai },
 
   // 🗄️ Databases
   { name: "MongoDB", icon: mongodb },

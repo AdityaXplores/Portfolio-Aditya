@@ -135,4 +135,4 @@ Reach out via the [Contact](#contact) section or email me at:
 
 ---
 
-> _Built and designed by Aditya Lahane — 2025_
+> _Built and designed by Aditya Lahane — 2026_
